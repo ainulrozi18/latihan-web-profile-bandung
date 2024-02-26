@@ -20,8 +20,7 @@ main {
     padding: 20px
 }
 
-header,
-nav li {
+header {
     display: inline
 }
 
@@ -74,7 +73,6 @@ nav a {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    margin-top: 20px
 }
 
 .jumbotron {
@@ -84,9 +82,14 @@ nav a {
     background-color: #00c8eb
 }
 
+nav ul {
+    padding-inline: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+
 nav li {
     list-style-type: none;
-    margin-right: 20px
 }
 
 nav {
@@ -96,25 +99,37 @@ nav {
 }
 
 main {
-    overflow: auto
+    display: flex;
+    gap: 1.5rem;
 }
 
 #content {
-    float: left;
-    width: 75%
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
 }
 
 aside {
-    float: right;
-    width: 25%;
-    padding-left: 20px
+    flex: 1;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1200px) {
+    main {
+        flex-flow: column nowrap;
+    }
 
-    #content,
-    aside {
-        width: 100%;
-        padding: 0
+    main aside {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+    nav ul {
+        justify-content: center;
+    }
+
+    main aside {
+        align-self: stretch;
     }
 }
